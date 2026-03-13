@@ -1,7 +1,7 @@
 const kids = ["Marc","Kenny","Rose"]
 
 const pastaOptions = [
-{ name:"Spaghetti Carbonara", img:"images/carbonara.jpg"},
+{ name:"Tagliatelle Carbonara", img:"images/carbonara.jpg"},
 { name:"Spaghetti Bolognese", img:"images/bolognese.jpg"},
 { name:"Penne Arrabbiata", img:"images/arrabbiata.jpg"},
 { name:"Pesto Pasta", img:"images/pesto.jpg"},
