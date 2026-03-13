@@ -8,21 +8,21 @@ h1{
 text-align:center;
 }
 
-/* Lunch section */
+/* Lunch inputs */
 
 .lunch-row{
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .lunch-row label{
 display:block;
 font-weight:bold;
-margin-bottom:5px;
+margin-bottom:6px;
 }
 
 .lunch-row input{
 width:100%;
-padding:12px;
+padding:14px;
 font-size:16px;
 border-radius:6px;
 border:1px solid #ccc;
@@ -35,26 +35,31 @@ display:flex;
 align-items:center;
 margin-bottom:15px;
 background:white;
-padding:10px;
-border-radius:8px;
+padding:12px;
+border-radius:10px;
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 .menu-item img{
-width:70px;
-height:70px;
+width:75px;
+height:75px;
 object-fit:cover;
 border-radius:8px;
 margin-right:15px;
 }
 
-.menu-name{
+.menu-content{
 flex:1;
-font-weight:bold;
 }
 
-select{
-padding:6px;
+.menu-name{
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.kid-options label{
+margin-right:15px;
+font-size:14px;
 }
 
 /* Save button */
@@ -68,4 +73,8 @@ background:#28a745;
 color:white;
 border:none;
 border-radius:8px;
+}
+
+button:active{
+background:#218838;
 }
