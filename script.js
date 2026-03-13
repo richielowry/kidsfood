@@ -1,7 +1,7 @@
 const kids = ["Marc","Kenny","Rose"]
 
 const pastaOptions = [
-{ name:"Tagliatelle Carbonara", img:"images/carbonara.jpg"},
+{ name:"Spaghetti Carbonara", img:"images/carbonara.jpg"},
 { name:"Spaghetti Bolognese", img:"images/bolognese.jpg"},
 { name:"Penne Arrabbiata", img:"images/arrabbiata.jpg"},
 { name:"Pesto Pasta", img:"images/pesto.jpg"},
@@ -46,10 +46,17 @@ div.appendChild(select)
 container.appendChild(div)
 
 })
+
 }
+
+function init(){
 
 createMenu(pastaOptions,"pastaMenu")
 createMenu(kidsMeals,"kidsMenu")
+
+loadSelections()
+
+}
 
 function saveSelections(){
 
@@ -88,19 +95,6 @@ document.getElementById("marcLunch").value=data.marcLunch||""
 document.getElementById("kennyLunch").value=data.kennyLunch||""
 document.getElementById("roseLunch").value=data.roseLunch||""
 
-const selects=document.querySelectorAll("select")
-
-selects.forEach((s,i)=>{
-
-const selections=data.menuSelections[i]||[]
-
-[...s.options].forEach(o=>{
-if(selections.includes(o.value)){
-o.selected=true
-}
-})
-
-})
 }
 
-window.onload=loadSelections
+window.onload = init
