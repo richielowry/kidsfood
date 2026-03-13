@@ -15,7 +15,7 @@ const pastaOptions = [
 const kidsMeals = [
 { name:"Chips & Chicken Nuggets", img:"images/nuggets-chips.jpg"},
 { name:"Chips & Sausages", img:"images/sausages-chips.jpg"},
-{ name:"McDonalds", img:"images/mcdonalds.jpg"}
+{ name:"McDonald", img:"images/mcdonalds.jpg"}
 ]
 
 function createMenu(menu, containerId){
