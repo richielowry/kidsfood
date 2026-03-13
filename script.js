@@ -1,11 +1,15 @@
 const kids = ["Marc","Kenny","Rose"]
 
 const pastaOptions = [
-{ name:"Spaghetti Carbonara", img:"images/carbonara.jpg"},
-{ name:"Spaghetti Bolognese", img:"images/bolognese.jpg"},
-{ name:"Penne Arrabbiata", img:"images/arrabbiata.jpg"},
-{ name:"Pesto Pasta", img:"images/pesto.jpg"},
-{ name:"Sausage Pasta", img:"images/sausage-pasta.jpg"}
+{ name:"SPAGHETTI BOLOGNESE", img:"images/carbonara.jpg"},
+{ name:"TAGLIATELLE CARBONARA", img:"images/bolognese.jpg"},
+{ name:"TONNARELLI AMATRICIANA", img:"images/arrabbiata.jpg"},
+{ name:"TAGLIATELLE CHICKEN ALFREDO", img:"images/chicken.jpg"},
+{ name:"TONNARELLI PRAWNS AND ASPARAGUS", img:"images/prawn.jpg"},
+{ name:"GNOCCHI SORRENTINA", img:"images/gnocchi.jpg"},
+{ name:"RAVIOLI ITALIANI", img:"images/ravioli.jpg"},
+{ name:"DOPPIO MEDITERRANEO", img:"images/doppio.jpg"},
+{ name:"Sausage Pasta", img:"images/sausage.jpg"}
 ]
 
 const kidsMeals = [
