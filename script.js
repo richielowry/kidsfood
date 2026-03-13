@@ -19,8 +19,8 @@ const container = document.getElementById(containerId)
 
 menu.forEach(item =>{
 
-const div = document.createElement("div")
-div.className="menu-item"
+const row = document.createElement("div")
+row.className="menu-item"
 
 const img = document.createElement("img")
 img.src=item.img
@@ -32,31 +32,31 @@ const name = document.createElement("div")
 name.className="menu-name"
 name.innerText=item.name
 
-const kidChoices = document.createElement("div")
-kidChoices.className="kid-options"
+const kidOptions = document.createElement("div")
 
-kids.forEach(k=>{
+kids.forEach(kid=>{
 
 const label = document.createElement("label")
+label.style.marginRight="15px"
 
 const checkbox = document.createElement("input")
 checkbox.type="checkbox"
-checkbox.value=k
+checkbox.value=kid
 
 label.appendChild(checkbox)
-label.append(" "+k)
+label.append(" "+kid)
 
-kidChoices.appendChild(label)
+kidOptions.appendChild(label)
 
 })
 
 content.appendChild(name)
-content.appendChild(kidChoices)
+content.appendChild(kidOptions)
 
-div.appendChild(img)
-div.appendChild(content)
+row.appendChild(img)
+row.appendChild(content)
 
-container.appendChild(div)
+container.appendChild(row)
 
 })
 }
@@ -69,45 +69,15 @@ data.marcLunch=document.getElementById("marcLunch").value
 data.kennyLunch=document.getElementById("kennyLunch").value
 data.roseLunch=document.getElementById("roseLunch").value
 
-const menus=document.querySelectorAll(".menu-item")
-
-data.menuSelections=[]
-
-menus.forEach(menu=>{
-
-const checks = menu.querySelectorAll("input[type=checkbox]:checked")
-
-const selected=[...checks].map(c=>c.value)
-
-data.menuSelections.push(selected)
-
-})
-
-localStorage.setItem("kidsMenu",JSON.stringify(data))
+localStorage.setItem("kidsLunch",JSON.stringify(data))
 
 document.getElementById("savedMessage").innerText="Saved!"
-}
-
-function loadSelections(){
-
-const saved=localStorage.getItem("kidsMenu")
-
-if(!saved) return
-
-const data=JSON.parse(saved)
-
-document.getElementById("marcLunch").value=data.marcLunch||""
-document.getElementById("kennyLunch").value=data.kennyLunch||""
-document.getElementById("roseLunch").value=data.roseLunch||""
-
 }
 
 function init(){
 
 createMenu(pastaOptions,"pastaMenu")
 createMenu(kidsMeals,"kidsMenu")
-
-loadSelections()
 
 }
 
