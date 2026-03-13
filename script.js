@@ -1,8 +1,8 @@
 const kids = ["Marc","Kenny","Rose"]
 
 const pastaOptions = [
-{ name:"SPAGHETTI BOLOGNESE", img:"images/carbonara.jpg"},
-{ name:"TAGLIATELLE CARBONARA", img:"images/bolognese.jpg"},
+{ name:"SPAGHETTI BOLOGNESE", img:"images/bolognese.jpg"},
+{ name:"TAGLIATELLE CARBONARA", img:"images/carbonara.jpg"},
 { name:"TONNARELLI AMATRICIANA", img:"images/arrabbiata.jpg"},
 { name:"TAGLIATELLE CHICKEN ALFREDO", img:"images/chicken.jpg"},
 { name:"TONNARELLI PRAWNS AND ASPARAGUS", img:"images/prawn.jpg"},
