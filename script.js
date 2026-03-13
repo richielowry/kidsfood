@@ -25,37 +25,40 @@ div.className="menu-item"
 const img = document.createElement("img")
 img.src=item.img
 
+const content = document.createElement("div")
+content.className="menu-content"
+
 const name = document.createElement("div")
 name.className="menu-name"
 name.innerText=item.name
 
-const select = document.createElement("select")
-select.multiple=true
+const kidChoices = document.createElement("div")
+kidChoices.className="kid-options"
 
 kids.forEach(k=>{
-const option=document.createElement("option")
-option.value=k
-option.text=k
-select.appendChild(option)
+
+const label = document.createElement("label")
+
+const checkbox = document.createElement("input")
+checkbox.type="checkbox"
+checkbox.value=k
+
+label.appendChild(checkbox)
+label.append(" "+k)
+
+kidChoices.appendChild(label)
+
 })
 
+content.appendChild(name)
+content.appendChild(kidChoices)
+
 div.appendChild(img)
-div.appendChild(name)
-div.appendChild(select)
+div.appendChild(content)
 
 container.appendChild(div)
 
 })
-
-}
-
-function init(){
-
-createMenu(pastaOptions,"pastaMenu")
-createMenu(kidsMeals,"kidsMenu")
-
-loadSelections()
-
 }
 
 function saveSelections(){
@@ -66,13 +69,15 @@ data.marcLunch=document.getElementById("marcLunch").value
 data.kennyLunch=document.getElementById("kennyLunch").value
 data.roseLunch=document.getElementById("roseLunch").value
 
-const selects=document.querySelectorAll("select")
+const menus=document.querySelectorAll(".menu-item")
 
 data.menuSelections=[]
 
-selects.forEach(s=>{
+menus.forEach(menu=>{
 
-const selected=[...s.selectedOptions].map(o=>o.value)
+const checks = menu.querySelectorAll("input[type=checkbox]:checked")
+
+const selected=[...checks].map(c=>c.value)
 
 data.menuSelections.push(selected)
 
@@ -94,6 +99,15 @@ const data=JSON.parse(saved)
 document.getElementById("marcLunch").value=data.marcLunch||""
 document.getElementById("kennyLunch").value=data.kennyLunch||""
 document.getElementById("roseLunch").value=data.roseLunch||""
+
+}
+
+function init(){
+
+createMenu(pastaOptions,"pastaMenu")
+createMenu(kidsMeals,"kidsMenu")
+
+loadSelections()
 
 }
 
